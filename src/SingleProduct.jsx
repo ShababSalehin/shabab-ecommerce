@@ -11,7 +11,13 @@ import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import Star from "./components/Star";
 import AddToCart from "./components/AddToCart";
 
-const API = "https://api.pujakaitem.com/api/products";
+// const API = "https://api.pujakaitem.com/api/products";
+
+// const API = "https://shababsalehin.github.io/relief-management/db.json";
+
+// const API="http://localhost:9090/products";
+
+const API="https://ecommerce-rt9f.onrender.com/products";
 
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
@@ -33,8 +39,9 @@ const SingleProduct = () => {
   } = singleProduct;
 
   useEffect(() => {
-    getSingleProduct(`${API}?id=${id}`);
-  }, []);
+    // getSingleProduct(${API}?id=${id});
+getSingleProduct(`${API}/${id}`);
+  }, [id]);
 
   if (isSingleLoading) {
     return <div className="page_loading">Loading.....</div>;
@@ -47,7 +54,16 @@ const SingleProduct = () => {
         <div className="grid grid-two-column">
           {/* product Images  */}
           <div className="product_images">
-            <MyImage imgs={image} />
+            {/* <MyImage imgs={image} /> */}
+            <img
+              src={image}
+              alt=""
+              style={{
+                maxWidth: '100%', // Set the maximum width to 100% of the container
+                height: 'auto',  // Auto adjust the height to maintain aspect ratio
+                borderRadius: '20px' 
+              }}
+            />
           </div>
 
           {/* product dAta  */}

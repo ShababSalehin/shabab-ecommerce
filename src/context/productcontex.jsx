@@ -4,7 +4,13 @@ import reducer from "../reducer/productReducer";
 
 const AppContext = createContext();
 
-const API = "https://api.pujakaitem.com/api/products";
+// const API = "https://api.pujakaitem.com/api/products";
+
+// const API = "https://shababsalehin.github.io/relief-management/db.json";
+
+// const API="http://localhost:9090/products";
+
+const API="https://ecommerce-rt9f.onrender.com/products";
 
 const initialState = {
   isLoading: false,
@@ -23,6 +29,7 @@ const AppProvider = ({ children }) => {
     try {
       const res = await axios.get(url);
       const products = await res.data;
+      console.log(products);
       dispatch({ type: "SET_API_DATA", payload: products });
     } catch (error) {
       dispatch({ type: "API_ERROR" });
@@ -36,6 +43,7 @@ const AppProvider = ({ children }) => {
     try {
       const res = await axios.get(url);
       const singleProduct = await res.data;
+      console.log(res.data);
       dispatch({ type: "SET_SINGLE_PRODUCT", payload: singleProduct });
     } catch (error) {
       dispatch({ type: "SET_SINGLE_ERROR" });

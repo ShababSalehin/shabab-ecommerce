@@ -6,14 +6,17 @@ const ErrorPage = () => {
   return (
     <Wrapper>
       <div className="container">
-        <div>          
-          <h2>Hello!</h2>
-          <h3>Welcome to Shabab Mart</h3>
+        <div>
+          <h2>404</h2>
+          <h3>UH OH! You're lost.</h3>
           <p>
-              Your Ultimate Shopping Destination! <br/> We're more than just an online store; we're your one-stop-shop for all things fabulous, trendy, and affordable! Discover an enchanting world of fashion, electronics, home essentials, and so much more right at your fingertips.
-            </p>
+            The page you are looking for does not exist. How you got here is a
+            mystery. But you can click the button below to go back to the
+            homepage.
+          </p>
+
           <NavLink to="/">
-            <Button>Go to Home</Button>
+            <Button>Go Back to Home</Button>
           </NavLink>
         </div>
       </div>
@@ -38,12 +41,6 @@ const Wrapper = styled.section`
       margin: 2rem 0;
     }
   }
-
-  background-image: url('/public/images/indexbg.jpg'); 
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-attachment: fixed;
-  min-height: 100vh; 
 `;
 
 export default ErrorPage;
